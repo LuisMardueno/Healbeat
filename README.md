@@ -33,5 +33,7 @@ Lenguaje de programación: C#, SQL
 
 # Instalación
 Del archivo de SQL ejecutar los diferentes querys para la creacion de la base de datos
-Abrir el proyecto de Visual Studio
+<p>
+Abrir el proyecto de Visual Studio</p>
+
 
