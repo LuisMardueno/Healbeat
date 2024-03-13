@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9AD9290-CD61-4E41-AA6E-D9ACEE5962BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProSalud</RootNamespace>
+    <AssemblyName>ProSalud</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdmCorrespondencia .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmCorrespondencia .Designer.cs">
+      <DependentUpon>AdmCorrespondencia .cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmElectro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmElectro.Designer.cs">
+      <DependentUpon>AdmElectro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmLaboratorio.Designer.cs">
+      <DependentUpon>AdmLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmRayosX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmRayosX.Designer.cs">
+      <DependentUpon>AdmRayosX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmResonancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmResonancia.Designer.cs">
+      <DependentUpon>AdmResonancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmResultados.Designer.cs">
+      <DependentUpon>AdmResultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmTomografia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmTomografia.Designer.cs">
+      <DependentUpon>AdmTomografia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmUltrasonido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmUltrasonido.Designer.cs">
+      <DependentUpon>AdmUltrasonido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmUsuarios.Designer.cs">
+      <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cita.Designer.cs">
+      <DependentUpon>Cita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta.Designer.cs">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contáctanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contáctanos.Designer.cs">
+      <DependentUpon>Contáctanos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conócenos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conócenos.Designer.cs">
+      <DependentUpon>Conócenos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Electrocardiograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Electrocardiograma.Designer.cs">
+      <DependentUpon>Electrocardiograma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratorio.Designer.cs">
+      <DependentUpon>Laboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menú.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menú.Designer.cs">
+      <DependentUpon>Menú.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProSaludDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProSaludDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RayosX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RayosX.Designer.cs">
+      <DependentUpon>RayosX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resonancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resonancia.Designer.cs">
+      <DependentUpon>Resonancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resultados.Designer.cs">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tomografia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tomografia.Designer.cs">
+      <DependentUpon>Tomografia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ultrasonido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ultrasonido.Designer.cs">
+      <DependentUpon>Ultrasonido.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdmCorrespondencia .resx">
+      <DependentUpon>AdmCorrespondencia .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmElectro.resx">
+      <DependentUpon>AdmElectro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmLaboratorio.resx">
+      <DependentUpon>AdmLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmRayosX.resx">
+      <DependentUpon>AdmRayosX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmResonancia.resx">
+      <DependentUpon>AdmResonancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmResultados.resx">
+      <DependentUpon>AdmResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmTomografia.resx">
+      <DependentUpon>AdmTomografia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmUltrasonido.resx">
+      <DependentUpon>AdmUltrasonido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmUsuarios.resx">
+      <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cita.resx">
+      <DependentUpon>Cita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta.resx">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contáctanos.resx">
+      <DependentUpon>Contáctanos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conócenos.resx">
+      <DependentUpon>Conócenos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Electrocardiograma.resx">
+      <DependentUpon>Electrocardiograma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratorio.resx">
+      <DependentUpon>Laboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menú.resx">
+      <DependentUpon>Menú.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RayosX.resx">
+      <DependentUpon>RayosX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resonancia.resx">
+      <DependentUpon>Resonancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resultados.resx">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tomografia.resx">
+      <DependentUpon>Tomografia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ultrasonido.resx">
+      <DependentUpon>Ultrasonido.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ProSaludDataSet.xsc">
+      <DependentUpon>ProSaludDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProSaludDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProSaludDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProSaludDataSet.xss">
+      <DependentUpon>ProSaludDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProSalud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo medico.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
