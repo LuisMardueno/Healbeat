@@ -31,3 +31,7 @@ surgir en el momento de utilizar el software de “Healbeat”.</p>
 Tipo de Software: Aplicación de escritorio
 Lenguaje de programación: C#, SQL
 
+# Instalación
+Del archivo de SQL ejecutar los diferentes querys para la creacion de la base de datos
+Abrir el proyecto de Visual Studio
+
