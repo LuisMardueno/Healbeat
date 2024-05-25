@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.NET.Test.Sdk.17.9.0\build\net462\Microsoft.NET.Test.Sdk.props" Condition="Exists('packages\Microsoft.NET.Test.Sdk.17.9.0\build\net462\Microsoft.NET.Test.Sdk.props')" />
+  <Import Project="packages\Microsoft.CodeCoverage.17.9.0\build\netstandard2.0\Microsoft.CodeCoverage.props" Condition="Exists('packages\Microsoft.CodeCoverage.17.9.0\build\netstandard2.0\Microsoft.CodeCoverage.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9AD9290-CD61-4E41-AA6E-D9ACEE5962BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProSalud</RootNamespace>
+    <AssemblyName>ProSalud</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.6.3.0\lib\net452\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.6.3.0\lib\net452\Bunifu.UI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Utils.1.0.5\lib\net45\Bunifu.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=7.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Abstractions.7.5.1\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=7.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.7.5.1\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=7.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.7.5.1\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=7.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.7.5.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeCoverage.17.9.0\lib\net462\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeMapping, Version=3.0.0.0, Culture=neutral, PublicKeyToken=680e2d5f226b327b, processorArchitecture=MSIL">
+      <HintPath>packages\MimeMapping.3.0.1\lib\net462\MimeMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Supabase.1.0.1\lib\netstandard2.0\Supabase.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Supabase.Core.1.0.0\lib\netstandard2.0\Supabase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase.Functions, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Supabase.Functions.2.0.0\lib\netstandard2.0\Supabase.Functions.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase.Gotrue, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Supabase.Gotrue.5.0.0\lib\netstandard2.0\Supabase.Gotrue.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase.Postgrest, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Supabase.Postgrest.4.0.1\lib\netstandard2.0\Supabase.Postgrest.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase.Realtime, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Supabase.Realtime.7.0.0\lib\netstandard2.0\Supabase.Realtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Supabase.Storage, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Supabase.Storage.2.0.0\lib\netstandard2.0\Supabase.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=7.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.7.5.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive, Version=5.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.5.0.0\lib\net472\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Channels.5.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Websocket.Client, Version=4.7.0.0, Culture=neutral, PublicKeyToken=ae648c6d12f59b1b, processorArchitecture=MSIL">
+      <HintPath>packages\Websocket.Client.4.7.0\lib\netstandard2.0\Websocket.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdmCorrespondencia .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmCorrespondencia .Designer.cs">
+      <DependentUpon>AdmCorrespondencia .cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmElectro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmElectro.Designer.cs">
+      <DependentUpon>AdmElectro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmLaboratorio.Designer.cs">
+      <DependentUpon>AdmLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmRayosX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmRayosX.Designer.cs">
+      <DependentUpon>AdmRayosX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmResonancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmResonancia.Designer.cs">
+      <DependentUpon>AdmResonancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmResultados.Designer.cs">
+      <DependentUpon>AdmResultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmTomografia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmTomografia.Designer.cs">
+      <DependentUpon>AdmTomografia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmUltrasonido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmUltrasonido.Designer.cs">
+      <DependentUpon>AdmUltrasonido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmUsuarios.Designer.cs">
+      <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cita.Designer.cs">
+      <DependentUpon>Cita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta.Designer.cs">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contáctanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contáctanos.Designer.cs">
+      <DependentUpon>Contáctanos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conócenos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conócenos.Designer.cs">
+      <DependentUpon>Conócenos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="counter.cs" />
+    <Compile Include="Electrocardiograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Electrocardiograma.Designer.cs">
+      <DependentUpon>Electrocardiograma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratorio.Designer.cs">
+      <DependentUpon>Laboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menú.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menú.Designer.cs">
+      <DependentUpon>Menú.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProSaludDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProSaludDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RayosX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RayosX.Designer.cs">
+      <DependentUpon>RayosX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resonancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resonancia.Designer.cs">
+      <DependentUpon>Resonancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resultados.Designer.cs">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tomografia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tomografia.Designer.cs">
+      <DependentUpon>Tomografia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ultrasonido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ultrasonido.Designer.cs">
+      <DependentUpon>Ultrasonido.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdmCorrespondencia .resx">
+      <DependentUpon>AdmCorrespondencia .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmElectro.resx">
+      <DependentUpon>AdmElectro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmLaboratorio.resx">
+      <DependentUpon>AdmLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmRayosX.resx">
+      <DependentUpon>AdmRayosX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmResonancia.resx">
+      <DependentUpon>AdmResonancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmResultados.resx">
+      <DependentUpon>AdmResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmTomografia.resx">
+      <DependentUpon>AdmTomografia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmUltrasonido.resx">
+      <DependentUpon>AdmUltrasonido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmUsuarios.resx">
+      <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cita.resx">
+      <DependentUpon>Cita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta.resx">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contáctanos.resx">
+      <DependentUpon>Contáctanos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conócenos.resx">
+      <DependentUpon>Conócenos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Electrocardiograma.resx">
+      <DependentUpon>Electrocardiograma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratorio.resx">
+      <DependentUpon>Laboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menú.resx">
+      <DependentUpon>Menú.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RayosX.resx">
+      <DependentUpon>RayosX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resonancia.resx">
+      <DependentUpon>Resonancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resultados.resx">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tomografia.resx">
+      <DependentUpon>Tomografia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ultrasonido.resx">
+      <DependentUpon>Ultrasonido.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ProSaludDataSet.xsc">
+      <DependentUpon>ProSaludDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProSaludDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProSaludDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProSaludDataSet.xss">
+      <DependentUpon>ProSaludDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProSalud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo medico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Healbeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-circle-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_male4-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abstract Colorful Motion Background, 4K 60fps Blue Looping - Free Stock Footage%281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeCoverage.17.9.0\build\netstandard2.0\Microsoft.CodeCoverage.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeCoverage.17.9.0\build\netstandard2.0\Microsoft.CodeCoverage.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.CodeCoverage.17.9.0\build\netstandard2.0\Microsoft.CodeCoverage.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeCoverage.17.9.0\build\netstandard2.0\Microsoft.CodeCoverage.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.17.9.0\build\net462\Microsoft.NET.Test.Sdk.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.17.9.0\build\net462\Microsoft.NET.Test.Sdk.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.17.9.0\build\net462\Microsoft.NET.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.17.9.0\build\net462\Microsoft.NET.Test.Sdk.targets'))" />
+  </Target>
+  <Import Project="packages\Microsoft.CodeCoverage.17.9.0\build\netstandard2.0\Microsoft.CodeCoverage.targets" Condition="Exists('packages\Microsoft.CodeCoverage.17.9.0\build\netstandard2.0\Microsoft.CodeCoverage.targets')" />
+  <Import Project="packages\Microsoft.NET.Test.Sdk.17.9.0\build\net462\Microsoft.NET.Test.Sdk.targets" Condition="Exists('packages\Microsoft.NET.Test.Sdk.17.9.0\build\net462\Microsoft.NET.Test.Sdk.targets')" />
+</Project>
